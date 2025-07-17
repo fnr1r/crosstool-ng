@@ -306,6 +306,12 @@ AC_FUNC_MALLOC
 AC_FUNC_REALLOC
 AC_FUNC_ALLOCA
 
+# Check needed for gprofng
+CTNG_LIBC_IS_GLIBC([glibc])
+dnl CTNG_SET_KCONFIG_OPTION is not designed for this
+dnl urgh
+CTNG_SET_KCONFIG_OPTION_X([glibc], [glibc])
+
 AM_GNU_GETTEXT([external])
 AM_GNU_GETTEXT_VERSION([0.19.7])
 

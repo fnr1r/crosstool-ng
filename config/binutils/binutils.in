@@ -187,6 +187,14 @@ config BINUTILS_FOR_TARGET
       Some utilities may need binutils libraries to be available on
       the target, eg. oprofile.
 
+config BINUTILS_GPROFNG
+    bool
+    prompt "Enable gprofng"
+    depends on CONFIGURE_has_glibc
+    help
+      Some profiler containing non-portable code.
+      Disabled by default since it requires glibc on the build/host.
+
 if BINUTILS_FOR_TARGET
 
 config BINUTILS_FOR_TARGET_IBERTY
